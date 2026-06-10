@@ -1,0 +1,98 @@
+.wrapper {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25D366;
+  color: var(--color-white);
+  font-size: 1.8rem;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+  transition: transform var(--transition), box-shadow var(--transition);
+  animation: whatsappPulse 2.5s ease-in-out infinite;
+}
+
+.button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 28px rgba(37, 211, 102, 0.7);
+}
+
+@keyframes whatsappPulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5); }
+  50% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5), 0 0 0 10px rgba(37, 211, 102, 0.15); }
+}
+
+.balloon {
+  position: relative;
+  display: block;
+  max-width: 260px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 16px 28px 16px 16px;
+  color: var(--color-white);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  animation: balloonIn 0.3s ease;
+  text-decoration: none;
+}
+
+.balloon::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  right: 24px;
+  width: 16px;
+  height: 16px;
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  transform: rotate(45deg);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: none;
+  color: var(--color-gray);
+  cursor: pointer;
+  font-size: 0.8rem;
+  border-radius: 50%;
+  transition: color var(--transition), background var(--transition);
+}
+
+.closeBtn:hover {
+  color: var(--color-white);
+  background: rgba(255,255,255,0.08);
+}
+
+@keyframes balloonIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .wrapper { right: 16px; bottom: 16px; }
+  .button { width: 52px; height: 52px; font-size: 1.6rem; }
+  .balloon { max-width: 220px; }
+}

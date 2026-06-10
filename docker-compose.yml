@@ -1,0 +1,12 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: provedorisp-site:latest
+    container_name: provedorisp-site
+    restart: unless-stopped
+    ports:
+      - "3005:3000"
+    environment:
+      - NODE_ENV=production

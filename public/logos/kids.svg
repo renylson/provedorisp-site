@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="20" viewBox="0 0 60 20">
+  <rect width="60" height="20" rx="4" fill="#FFD700" opacity="0.2"/>
+  <text x="4" y="14" font-family="sans-serif" font-size="10" font-weight="700" fill="#FFD700">Kids</text>
+</svg>

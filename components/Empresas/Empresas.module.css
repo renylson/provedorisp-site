@@ -1,0 +1,124 @@
+.section {
+  padding: 80px 0;
+  background: var(--color-surface);
+  scroll-margin-top: var(--navbar-height);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 12px;
+  color: var(--color-white);
+}
+
+.sectionSubtitle {
+  color: var(--color-gray);
+  text-align: center;
+  font-size: 1.05rem;
+  margin-bottom: 48px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+.card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-cyan);
+}
+
+.icon {
+  font-size: 1.8rem;
+  color: var(--color-cyan);
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--color-white);
+}
+
+.cardText {
+  font-size: 0.85rem;
+  color: var(--color-gray);
+  line-height: 1.5;
+}
+
+.ctaBox {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.ctaTitle {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 6px;
+}
+
+.ctaText {
+  font-size: 0.9rem;
+  color: var(--color-gray);
+}
+
+.ctaBtn {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-white);
+  background: var(--gradient-cyan);
+  padding: 14px 32px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  transition: opacity var(--transition), box-shadow var(--transition);
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+.ctaBtn:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+  .ctaBox { flex-direction: column; text-align: center; }
+}

@@ -1,0 +1,114 @@
+.carousel {
+  position: relative;
+  width: 75%;
+  margin: 0 auto;
+  aspect-ratio: auto 1774 / 887;
+  max-height: 100%;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    aspect-ratio: auto 800 / 400;
+  }
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 160px;
+}
+
+.cta {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-white);
+  background: var(--gradient-cta);
+  padding: 14px 36px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: opacity var(--transition), box-shadow var(--transition);
+  box-shadow: var(--shadow-glow-purple);
+}
+
+.cta:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 40px rgba(232, 0, 111, 0.6);
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid var(--color-border);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity var(--transition), background var(--transition);
+}
+
+.carousel:hover .arrow { opacity: 1; }
+
+.arrowLeft  { left: 20px; }
+.arrowRight { right: 20px; }
+
+.arrow:hover { background: rgba(0,153,255,0.3); }
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.dotActive {
+  background: var(--color-cyan);
+  box-shadow: 0 0 10px rgba(0,212,255,0.6);
+  transform: scale(1.3);
+}
+
